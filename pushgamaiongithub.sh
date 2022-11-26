@@ -1,6 +1,6 @@
 #!/bin/bash
 # Read informations on keyboard
-username = 'ernestfotseu'
+username = "ernestfotseu"
 read -p "User Name :" usernamespecify
 read -p "Your email adresse :" email
 read -p "Description of commit :" descriptioncommit
@@ -8,8 +8,8 @@ read -p "Description of commit :" descriptioncommit
 acces_token = "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"
 
 # Set authentication
-git config --global user.email '${email}'
-git config --global user.name '${username}'
+git config --global user.email "${email}"
+git config --global user.name "${username}"
 # create a file, then add it to stage
 git init
 git add .
