@@ -1,4 +1,4 @@
-# gamairoot
+# gamairoot-ce
 GAMAI is Generalized and Applied Management of Academic Institutions - (Gestion Généralisée et Appliquée des Etablissements Universitaires)
 
 GAMAI est une application developpée en Python permettant la gestion éfficace des scolarités et des enseignements au sein des Universités ou tout établissement de l'enseignement supérieur.
