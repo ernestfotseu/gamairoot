@@ -5,7 +5,7 @@ read -p "Your email adresse :" email
 read -p "Description of commit :" descriptioncommit
 
 acces_token = "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"
-echo "acces_token=$acces_token"
+echo "acces_token=${acces_token}"
 # Set authentication
 git config --global user.email "${email}"
 git config --global user.name "${usernamespecify}"
@@ -19,7 +19,7 @@ git remote remove origin
 echo "*****Add origin*****"
 # git remote add origin https://github.com/ernestfotseu/gamairoot-ce.git
 git remote add origin https://${acces_token}@github.com/ernestfotseu/gamairoot-ce.git
-echo "https://$acces_token@github.com/ernestfotseu/gamairoot-ce.git"
+echo "https://${acces_token}@github.com/ernestfotseu/gamairoot-ce.git"
 echo "*****Pull github origin*****"
 git pull origin main --rebase
 git remote -v
