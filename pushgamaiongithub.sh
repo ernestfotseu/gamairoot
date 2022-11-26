@@ -1,16 +1,14 @@
 #!/bin/bash
 # Read informations on keyboard
-read -p "User Name : " uname
-read -p "Password : " passwd
-read -p "Your email adresse : " email
-read -p "Description of commit : " descriptioncommit
-
+#read -p "User Name :" username
+#read -p "Password :" passwd
+#read -p "Your email adresse :" email
+read -p "Description of commit :" descriptioncommit
+git auth login
 # Set authentication
-git config user.email '$email'
-git config user.name '$uname'
-git config user.passwd '$passwd'
-echo "User is: $uname"
-echo "Email is: $email"
+git config --global user.email '$email'
+git config --global user.name '$username'
+git config --global user.passwd '$passwd'
 # create a file, then add it to stage
 git init
 git add .
