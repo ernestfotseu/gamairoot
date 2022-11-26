@@ -19,7 +19,7 @@ echo "*****Remove old origin*****"
 git remote remove origin
 echo "*****Add origin*****"
 # git remote add origin https://github.com/ernestfotseu/gamairoot-ce.git
-git remote add origin https://{acces_token}@github.com/{username}/gamairoot-ce.git
+git remote add origin https://${acces_token}@github.com/${username}/gamairoot-ce.git
 echo "*****Pull github origin*****"
 git pull origin main --rebase
 git remote -v
