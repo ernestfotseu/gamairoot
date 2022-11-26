@@ -1,0 +1,116 @@
+{% extends "base.html" %} {% block content %} {% include "etudiant/header.html" %}
+
+<br><br>
+<center>
+    <div class="row ">
+        <div class="col-sm-12">
+            <h2 class="text-center alert alert-danger">projet de gestion des statistiques universitaire</h2>
+        </div>
+    </div>
+</center>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+    </div>
+    <div class="col-sm-4 offset-1">
+        <h4 class="text-center alert alert-info">donnees statistiques notes matiere 5</h4>
+        <table class="table align-middle mb-0 bg-white table-hover">
+            <thead class="bg-light">
+                <tr>
+                    <th>[00.09]</th>
+                    <th>[10.11]</th>
+                    <th>[12.13]</th>
+                    <th>[14.15]</th>
+                    <th>[16.17]</th>
+                    <th>[18.20]</th>
+                    <th>total</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">{{no}}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{no1}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{no2}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{no3}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{no4}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{no5}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{no6}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <canvas id="myChart" width="400" height="250"></canvas>
+            <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['[00.09]','[10.11]','[12.13]','[14.15]','[16.17]','[18.20]'],
+                    datasets: [{
+                        label: '# of Resultat',
+                        data: [{{no}},{{no1}},{{no2}},{{no3}},{{no4}},{{no5}},{{no6}}],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(153, 102, 255, 0.8)',
+                            'rgba(255, 159, 64, 0.8)',
+                            'rgba(240, 120, 50, 0.8)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(240, 120, 50, 1)',
+
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            </script>
+    </div>
+    <div class="row">
+        <div class="col-auto mb-4 mb-md-0">
+            <!-- Submit button -->
+            <a href="{%url 'statistique1'%}" class="btn btn-primary mb-4">
+            retour
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content%}
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <h4 class="alert alert-info">modifier les informations des etudiants</h4>
+        <form action="#" method="post">
+            {% csrf_token %} {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="modifier">
+            <a href="{% url 'home1'%}" class='btn btn-info'>retour</a>
+        </form>
+    </div>
+
+</div>
+
+{% endblock content%}

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  dbpostgresql:
+    image: postgres
+  gamaiweb:
+    build: .
+    command: python3 /code/manage.py runserver 0.0.0.0:8002
+    volumes:
+      - .:/gamaicode
+    ports:
+      - 8002:8002

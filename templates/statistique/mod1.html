@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %} {% include "etudiant/header.html" %}
+<br><br>
+<div class="row">
+    <div class="col-sm-4 offset-4">
+        <h4 class="alert alert-info">modifier les notes des etudiants</h4>
+        <form action="#" method="post">
+            {% csrf_token %} {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="modifier">
+            <a href="{% url 'statistique1'%}" class='btn btn-info'>retour</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

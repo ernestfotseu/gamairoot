@@ -1,0 +1,122 @@
+{% extends "base.html" %} {% block content %} {% include "etudiant/header.html" %}
+
+<br><br>
+<center>
+    <div class="row ">
+        <div class="col-sm-12">
+            <h2 class="text-center alert alert-danger">projet de gestion des statistique universitaire</h2>
+        </div>
+    </div>
+</center>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+    </div>
+    <div class="col-sm-4 offset-1">
+        <h4 class="text-center alert alert-info">donnee statistique sur les ages des etudiants</h4>
+        <table class="table align-middle mb-0 bg-white table-hover">
+            <thead class="bg-light">
+                <tr>
+                    <th>[15.17]</th>
+                    <th>[18.20]</th>
+                    <th>[21.23]</th>
+                    <th>[24.26]</th>
+                    <th>[27.29]</th>
+                    <th>[30.32]</th>
+
+                    <th>[39.41++]</th>
+                    <th>totale</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">{{no}}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{n1}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{n2}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{n3}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{n4}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{n5}}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{n6}}</p>
+                    </td>
+
+
+                    <td>
+                        <p class="fw-normal mb-1">{{n9}}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <canvas id="myChart" width="400" height="250"></canvas>
+            <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['[15.17]','[18.20]','[21.23]','[24.26]','[27.29]','[30.32]','[33.35]','[36.38]','[39 plus]'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [{{no}},{{n1}},{{n2}},{{n3}},{{n4}},{{n5}},{{n6}},{{n7}},{{n8}},12],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(153, 102, 255, 0.8)',
+                            'rgba(255, 159, 64, 0.8)',
+                            'rgba(240, 120, 50, 0.8)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(240, 120, 50, 1)',
+
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            </script>
+    </div>
+    <div class="row">
+        <div class="col-auto mb-4 mb-md-0">
+            <!-- Submit button -->
+            <a href="{%url 'home1'%}" class="btn btn-primary mb-4 offset-8">
+            retour
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% include "etudiant/footer.html" %} {% endblock content %}
