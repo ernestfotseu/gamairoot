@@ -6,9 +6,11 @@ read -p "Your email adresse : " email
 read -p "Description of commit : " descriptioncommit
 
 # Set authentication
-git config --global user.email '$email'
-git config --global user.name '$uname'
-git config --global user.passwd '$passwd'
+git config user.email '$email'
+git config user.name '$uname'
+git config user.passwd '$passwd'
+echo "User is: $uname"
+echo "Email is: $email"
 # create a file, then add it to stage
 git init
 git add .
